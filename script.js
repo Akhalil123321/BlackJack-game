@@ -39,6 +39,9 @@ let card4Replace = document.getElementById("cardArea4")
 let card5Replace = document.getElementById("cardArea5")
 let card6Replace = document.getElementById("cardArea6")
 
+const winsound = new Audio ('sounds/cash.mp3');
+const losssound = new Audio ('sounds/aww.mp3');
+
 function getRandomImage(){
   let randomImage = Math.floor(Math.random() *4) + 1
 if (randomImage ===1 ){
@@ -292,11 +295,13 @@ function  renderGame(){
     messegeEl.textContent = "whoooo! you'v got blackjack" 
     hasBlackjack = true
     playerSum +=140
+    winsound.play()
     playerEl.textContent = player.name + ": $ " + playerSum
   } else {
     messegeEl.textContent = "unlucky! you're out of the game"
     isAlive = false
     playerSum -=30
+    losssound.play()
     playerEl.textContent = player.name + ": $ " + playerSum
   }
   if(playerSum<=0){

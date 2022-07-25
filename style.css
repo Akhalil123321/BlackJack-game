@@ -68,3 +68,6 @@ button{
 /* #card1{
   background-image: url("cards/3.png"); ;
 } */
+#player-el{
+  color: #d44545;
+}
